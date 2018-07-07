@@ -2,7 +2,7 @@ import http from 'http'
 import url from 'url'
 import { itemliHeadUrl } from './api_itemli'
 
-if (process.env.NODE_ENV != 'production') {
+if (process.env.NODE_ENV !== 'production') {
   require('dotenv').load()
 }
 
