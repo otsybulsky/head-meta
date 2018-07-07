@@ -1,18 +1,21 @@
 {
   "name": "head-meta",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "api for get head metadata from any url",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node ./src/index"
+    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node ./src/index",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./src -s",
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && node ./build/index.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "cross-env": "^5.2.0"
   },
   "dependencies": {
+    "babel-preset-env": "^1.7.0",
     "dotenv": "^6.0.0",
     "got": "^8.3.2",
     "metascraper": "^3.11.6"
