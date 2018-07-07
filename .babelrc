@@ -1,3 +1,14 @@
 {
-  "presets": ["env"]
+  "presets": [
+    [
+      "env",
+      {
+        // for transform async/await to generator
+        // https://esausilva.com/2017/07/11/uncaught-referenceerror-regeneratorruntime-is-not-defined-two-solutions/
+        "targets": {
+          "browsers": ["last 2 Chrome versions"]
+        }
+      }
+    ]
+  ]
 }
