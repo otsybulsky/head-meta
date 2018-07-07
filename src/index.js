@@ -10,8 +10,6 @@ server.on('request', function(req, res) {
     query: { url: targetUrl }
   } = url.parse(req.url, true)
 
-  console.log(path)
-
   if (targetUrl) {
     itemliHeadUrl(targetUrl, res)
   } else if (path != '/favicon.ico') {
