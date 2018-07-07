@@ -1,5 +1,6 @@
 import http from 'http'
 import url from 'url'
+import { itemliHeadUrl } from './api_itemli'
 
 const server = new http.Server()
 
@@ -8,13 +9,12 @@ server.on('request', function(req, res) {
     query: { url: targetUrl }
   } = url.parse(req.url, true)
 
+  res.writeHead(200, {
+    'Content-Type': 'application/json; charset=utf-8'
+  })
+
   if (targetUrl) {
-    res.end(
-      JSON.stringify({
-        status: 'ok',
-        targetUrl: targetUrl
-      })
-    )
+    itemliHeadUrl(targetUrl, res)
   } else {
     res.end(
       JSON.stringify({
