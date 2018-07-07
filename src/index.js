@@ -6,22 +6,26 @@ const server = new http.Server()
 
 server.on('request', function(req, res) {
   const {
+    path,
     query: { url: targetUrl }
   } = url.parse(req.url, true)
 
-  res.writeHead(200, {
-    'Content-Type': 'application/json; charset=utf-8'
-  })
+  console.log(path)
 
   if (targetUrl) {
     itemliHeadUrl(targetUrl, res)
-  } else {
+  } else if (path != '/favicon.ico') {
+    res.writeHead(200, {
+      'Content-Type': 'application/json; charset=utf-8'
+    })
     res.end(
       JSON.stringify({
         status: 'error',
         reason: 'Url not finded in request params.'
       })
     )
+  } else {
+    res.end('')
   }
 })
 

@@ -8,6 +8,10 @@ async function getMetadata(targetUrl) {
 }
 
 export function itemliHeadUrl(targetUrl, res) {
+  res.writeHead(200, {
+    'Content-Type': 'application/json; charset=utf-8'
+  })
+
   const result = {
     requestUrl: targetUrl
   }
