@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec babel-node ./src/index"
+    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node ./src/index"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^5.2.0"
   },
   "dependencies": {
+    "dotenv": "^6.0.0",
     "got": "^8.3.2",
     "metascraper": "^3.11.6"
   },

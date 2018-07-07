@@ -2,6 +2,12 @@ import http from 'http'
 import url from 'url'
 import { itemliHeadUrl } from './api_itemli'
 
+if (process.env.NODE_ENV != 'production') {
+  require('dotenv').load()
+}
+
+const PORT = process.env.PORT || 3000
+
 const server = new http.Server()
 
 server.on('request', function(req, res) {
@@ -27,5 +33,5 @@ server.on('request', function(req, res) {
   }
 })
 
-server.listen(4001, 'localhost')
-console.log('server is started')
+server.listen(PORT)
+console.log(`server is started on port ${PORT}`)
