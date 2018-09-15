@@ -1,3 +1,3 @@
 # head-meta
 
-Api for get head metadata from any url
+Api for get head metadata from any url.
