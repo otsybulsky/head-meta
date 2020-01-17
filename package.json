@@ -1,6 +1,6 @@
 {
   "name": "head-meta",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "api for get head metadata from any url",
   "main": "index.js",
   "scripts": {
